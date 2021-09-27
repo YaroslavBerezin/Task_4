@@ -4,12 +4,12 @@ public class Main {
 
     public static void main(String[] args) {
 
-        System.out.println(findSumOfFirstProgression());
-        System.out.println(findSumOfSecondProgression());
+        System.out.println(findFirstSum());
+        System.out.println(findSecondSum());
 
     }
 
-    static double findSumOfFirstProgression() {
+    static double findFirstSum() {
         double sum1 = 0;
         for (int i = 1; i <= 50; i++) {
             sum1 += 1 / Math.pow(i, 3);
@@ -17,7 +17,7 @@ public class Main {
         return sum1;
     }
 
-    static double findSumOfSecondProgression() {
+    static double findSecondSum() {
         double sum2 = 0;
         for (int i = 2; i <= 128; i += 2) {
             sum2 += 1 / Math.pow(i, 2);
