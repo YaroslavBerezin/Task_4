@@ -9,7 +9,7 @@ public class Main {
 
     }
 
-    static double findFirstSum() {
+    private static double findFirstSum() {
         double sum1 = 0;
         for (int i = 1; i <= 50; i++) {
             sum1 += 1 / Math.pow(i, 3);
@@ -17,7 +17,7 @@ public class Main {
         return sum1;
     }
 
-    static double findSecondSum() {
+    private static double findSecondSum() {
         double sum2 = 0;
         for (int i = 2; i <= 128; i += 2) {
             sum2 += 1 / Math.pow(i, 2);
