@@ -1,28 +1,46 @@
 package ru.vsu.sc.berezin_y_a;
 
+import java.util.Scanner;
+
 public class Main {
 
     public static void main(String[] args) {
 
-        System.out.println(findFirstSum());
-        System.out.println(findSecondSum());
+        int n = readNum("Enter n: ");
+        int a = readNum("Enter a: ");
+        int b = readNum("Enter b: ");
+
+        System.out.printf("The sum of numbers = %d", findSum(n, a, b));
 
     }
 
-    private static double findFirstSum() {
-        double sum1 = 0;
-        for (int i = 1; i <= 50; i++) {
-            sum1 += 1 / Math.pow(i, 3);
+    private static int findSum(int n, int a, int b) {
+        int sum = 0;
+        for (int i = 1; i <= n; i++) {
+            if (checkNum(i, a, b)) {
+                sum += i;
+            }
         }
-        return sum1;
+        return sum;
     }
 
-    private static double findSecondSum() {
-        double sum2 = 0;
-        for (int i = 2; i <= 128; i += 2) {
-            sum2 += 1 / Math.pow(i, 2);
+    private static boolean checkNum(int i, int a, int b) {
+        if ((i % a == 0) && (i % b != 0)) {
+            return true;
+        } else {
+            return false;
         }
-        return sum2;
+    }
+
+    private static int readNum(String text) {
+        System.out.print(text);
+        Scanner scanner = new Scanner(System.in);
+        int num = scanner.nextInt();
+        if (num <= 0) {
+            System.out.println("Error");
+            System.exit(1);
+        }
+        return num;
     }
 
 }
