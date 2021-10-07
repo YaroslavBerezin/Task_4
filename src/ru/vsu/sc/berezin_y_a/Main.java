@@ -25,11 +25,7 @@ public class Main {
     }
 
     private static boolean checkNum(int i, int a, int b) {
-        if ((i % a == 0) && (i % b != 0)) {
-            return true;
-        } else {
-            return false;
-        }
+        return (i % a == 0) && (i % b != 0);
     }
 
     private static int readNum(String text) {
